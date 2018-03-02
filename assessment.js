@@ -6,7 +6,13 @@ After writing your function uncomment the matching function reference at the bot
 
 // 1. Write a function called helloWorld that returns the string 'Hello World!'.
 
+
+
 function helloWorld() {
+
+
+return ('Hello World!');
+
 
 }
 
@@ -23,8 +29,25 @@ function helloWorld() {
              lambdaSchool(8); // returns 8
 */
 
-function lambdaSchool() {
+function lambdaSchool(num) {
 
+//test for 3 and 5
+if(num%5===0&&num%3===0){
+    return 'Lambda School';
+}
+//test for 3
+else if(num%3===0){
+    return 'Lambda';
+}
+//test for 5
+else if(num%5===0){
+    return 'School';
+}
+//default
+else{
+    return num;
+}
+    
 }
 
 /*
@@ -38,7 +61,24 @@ function lambdaSchool() {
              longestString(['JavaScript', 'HTML', 'CSS']); // returns 'JavaScript'
 */
 
-function longestString() {
+function longestString(strs) {
+//the one sort i don't have to lookup! :)
+var swapd;
+do{
+    swapd=false;
+for(var i=0; i<strs.length-1; i++){
+    if(strs[i].length<strs[i+1].length){
+        var temp = strs[i];
+        strs[i] = strs[i+1];
+        strs[i+1] = temp;
+        swapd=true;
+
+    }
+
+    }
+}while(swapd);
+
+return strs[0];
 
 }
 
@@ -63,7 +103,20 @@ function longestString() {
              computeUserAverageAge(users); // returns 62 (This number is rounded up from 61.6666)
 */
 
-function computeUserAverageAge() {
+
+function computeUserAverageAge(users) {
+//hold sum
+var sum=0;
+
+//sum age from user objs
+    for(var i=0; i<users.length;i++){
+        sum+=users[i].age;
+        
+
+    }
+
+    //give avg
+    return Math.round(sum/users.length);
 
 }
 
